@@ -10,11 +10,14 @@ Men vaför kan du inte höra alla trummorna..?
 ```
 #################################################
 # Gör din melodi här nedanför!                  #
+# Byt instrument med use_synth                  #
 #################################################
 
 live_loop :min_melodi do
+  sleep 0.5
   play 60
-  sleep 1
+  sleep 0.5
+  
 end
 
 # Gör en till om du vill
@@ -33,8 +36,13 @@ end
 # Men varför hörs bara virveltrumman..?         #
 #################################################
 live_loop :bastrumma do
-  #sample :bd_klub
+  sample :bd_klub
   sleep 2
+  2.times do
+    sample :bd_klub
+    sleep 0.5
+  end
+  sleep 1
 end
 
 live_loop :virveltrumma do
@@ -55,5 +63,6 @@ live_loop :hihat do
   end
   #sample :drum_cymbal_open, amp: rrand(0.6,1)
 end
+
 ```
 
